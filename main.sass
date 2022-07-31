@@ -1,0 +1,101 @@
+@import "_variable"
+
+*, *::before, *::after
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+
+:root
+    font-size: $fs
+
+body
+    font-family: $ff
+    background-color: $dark-blue
+    width: 100vw
+    height: 100vh
+    min-height: 400px
+
+main
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .container
+        position: relative
+        width: 95%
+        min-width: 350px
+        max-width: 700px
+        height: 350px
+        padding: 2.5rem 1rem
+        background-color: $dark-grayish-blue
+        border-radius: 10px
+        box-shadow: 0 0 5px 2px #0000000d
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+
+        #advice-id
+            color: $neon-green
+            font-size: 14px
+            letter-spacing: .5em
+
+        #advice
+            width: 90%
+            color: white
+            text-align: center
+        
+        #divider
+            width: 90%
+
+            img
+                width: 100%
+                height: auto
+    
+        .dice-cont
+            position: absolute
+            width: 70px
+            height: 70px
+            bottom: -35px
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: $neon-green
+            border-radius: 50%
+
+            #dice
+                width: 35%
+                height: auto
+                z-index: 2
+            
+        .dice-cont::after
+            content: ""
+            position: absolute
+            display: block
+            width: 0
+            height: 0
+            top: 35px
+            left: 35px
+            animation-fill-mode: forwards
+            
+            @keyframes boxanimationopen
+                100%
+                    box-shadow: 0 0 35px 10px $neon-green
+            
+            @keyframes boxanimationclose
+                0%
+                    box-shadow: 0 0 35px 10px $neon-green
+                100%
+                    box-shadow: 0 0 0 0
+
+.attribution
+    position: relative
+    bottom: 2rem
+    left: 0
+    width: 100%
+    height: 2rem
+    line-height: 2rem
